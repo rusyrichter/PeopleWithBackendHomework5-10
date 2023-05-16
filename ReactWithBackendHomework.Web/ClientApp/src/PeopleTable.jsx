@@ -38,8 +38,7 @@ class PeopleTable extends React.Component {
             onDeleteClick={() => this.onDeleteClick(p)}
             onCheckedClick={() => this.onCheckedClick(p.id)}
             isChecked={checkedPeopleId.includes(p.id)}
-            onEditClick={() => this.onEditClick(p)}
-            selectAll={selectAll}
+            onEditClick={() => this.onEditClick(p)}           
         />)
 
 
@@ -140,8 +139,7 @@ class PeopleTable extends React.Component {
     SelectAll = () => {
         const { people } = this.state;
         const ids = people.map(p => p.id);
-        this.setState({
-            selectAll: true,
+        this.setState({            
             checkedPeopleId: [...ids]
         });
 
@@ -149,8 +147,7 @@ class PeopleTable extends React.Component {
 
     }
     UnselectAll = () => {
-        this.setState({
-            selectAll: false,
+        this.setState({          
             checkedPeopleId: []
         });
     }
